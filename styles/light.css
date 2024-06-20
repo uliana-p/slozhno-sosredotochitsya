@@ -1,12 +1,40 @@
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
-
+/* стили для светлой темы  */
 .page.theme_light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
+  --h1: var(--color-pink-200);
+
+  --text-color-p: var(--color-grey);
+  --color-background: var(--color-medium-pink);
+  --text-color: var(--color-grey);
+  --accent-color: var(--color-grey);
+  --outline: var(--outline-black);
+  --item-text: var(--color-grey);
+  background-image: url(/images/cover-image-light.png);
+}
+
+.page.theme_light .decor::before {
+  display: none;
+}
+.page.theme_light .decor {
+  color: transparent;
+}
+
+@media (prefers-color-scheme: light) {
+  .page.theme_light {
+    --h1: var(--color-pink-200);
+
+    --text-color-p: var(--color-grey);
+    --color-background: var(--color-medium-pink);
+    --text-color: var(--color-grey);
+    --accent-color: var(--color-grey);
+    --outline: var(--outline-black);
+    --item-text: var(--color-grey);
+    background-image: url(/images/cover-image-light.png);
+  }
+
+  .page.theme_light .decor::before {
+    display: none;
+  }
+  .page.theme_light .decor {
+    color: transparent;
+  }
 }

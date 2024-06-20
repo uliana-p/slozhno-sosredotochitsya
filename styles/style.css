@@ -1,5 +1,337 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
+/* не забыть фавикон */
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-image: url(/images/cover-image-dark.png);
+  background-attachment: fixed;
+  font-size: 18px;
+  line-height: 23.4px;
+  overflow: auto;
+}
+
+.page p {
+  color: var(--text-color-p);
+}
+.decor {
+  position: absolute;
+  text-transform: uppercase;
+  color: var(--accent-color);
+  right: 48px;
+  top: var(--margin);
+}
+.decor::before {
+  width: 9px;
+  height: 9px;
+  box-shadow: 0px 0px 4px 2px #ff0070;
+  position: absolute;
+  border-radius: 50%;
+  content: "";
+  background: var(--accent-color);
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
+  left: 43px;
+  top: calc(var(--margin) - 13px);
+}
+.decor::after {
+  width: 25px;
+  height: 25px;
+  left: 34px;
+  border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--accent-color);
+  position: absolute;
+
+  content: "";
+}
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: var(--margin);
+  gap: var(--margin-min);
+  color: var(--accent-color);
+}
+.header__theme-menu-button_active {
+  outline: 1px solid var(--accent-color);
+
+  pointer-events: none;
+}
+.header__theme-menu-button {
+  text-transform: lowercase;
+  background-color: transparent;
+  padding: 1.5px 13px;
+}
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--outline);
+}
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--accent-color);
+  outline: none;
+}
+
+.intro {
+  display: flex;
+
+  max-width: 100%;
+  flex-direction: column;
+  position: relative;
+  margin-bottom: var(--margin-max);
+}
+.intro::after {
+  width: 25px;
+  height: 25px;
+  left: var(--margin);
+  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+  position: absolute;
+  bottom: 60px;
+  content: "";
+}
+
+.h1 {
+  font-size: 157px;
+  line-height: 82.5%;
+  color: var(--h1);
+  text-shadow: 4px 4px 0 var(--color-background);
+  margin: 275px 0 113px;
+}
+.h2 {
+  width: calc(50% - var(--margin));
+  margin-bottom: 17%;
+  margin-right: var(--margin);
+  align-self: flex-end;
+}
+/*------------тут как выглядит текст и ссылька-------  */
+.text-dark {
+  color: var(--text-color);
+}
+
+.text-title {
+  font-weight: 700;
+}
+.text-background {
+  background-color: var(--color-background);
+}
+.text-regular {
+  font-weight: 400;
+}
+
+.text-heading {
+  color: var(--item-text);
+}
+.link {
+  text-shadow: 2px 2px 0 var(--color-background);
+  text-decoration: none;
+}
+.link:hover {
+  text-decoration: underline;
+}
+.link:focus,
+.header__theme-menu-button:focus {
+  outline: none;
+}
+.link:focus-visible {
+  outline: 1px solid var(--text-color-p);
+}
+/* ------------------- */
+
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  margin-bottom: 80px;
+  margin-left: var(--margin);
+  margin-right: var(--margin);
+}
+.item {
+  max-width: 649px;
+
+  gap: var(--margin-min);
+  display: flex;
+  flex-direction: column;
+}
+
+.item:not(:last-of-type) {
+  margin-bottom: var(--margin-max);
+}
+.text-item {
+  width: 31.7%;
+  left: 0;
+  align-self: start;
+  position: relative;
+  display: inline-flex;
+}
+.container_column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--margin);
+}
+.column {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--margin-max);
+}
+
+.collage {
+  display: grid;
+
+  gap: 20px;
+  grid-template-areas:
+    "sunset sunset ice-cream"
+    "tape book ice-cream"
+    "tape street street";
+}
+.collage__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.collage__item-wrapper {
+  margin: 0;
+}
+.collage__item-wrapper_type_sunset {
+  grid-area: sunset;
+}
+.collage__item-wrapper_type_ice-cream {
+  grid-area: ice-cream;
+}
+.collage__item-wrapper_type_tape {
+  grid-area: tape;
+}
+.collage__item-wrapper_type_book {
+  grid-area: book;
+}
+.collage__item-wrapper_type_street {
+  grid-area: street;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+  padding-top: 25px;
+  padding-bottom: 207px;
+}
+.decor-footer::before {
+  width: 25px;
+  height: 25px;
+  right: var(--margin);
+  top: 0;
+  border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--accent-color);
+  position: absolute;
+
+  content: "";
+}
+.decor-footer::after {
+  width: 25px;
+  height: 25px;
+  left: var(--margin);
+  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+  position: absolute;
+  bottom: var(--margin);
+  content: "";
+}
+/* размеры для екранов  раз*/
+@media (width <= 768px) {
+  .header__theme-menu-list {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    margin-right: var(--margin);
+    margin-top: 192px;
+  }
+  .h1 {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    margin: 173px 0 161px;
+  }
+  .h2 {
+    margin-bottom: 29%;
+  }
+  .column {
+    grid-template-columns: initial;
+  }
+  .item {
+    max-width: 100%;
+  }
+  .column .item {
+    margin-bottom: 0;
+  }
+  .text-heading {
+    flex-shrink: 0;
+  }
+  .footer {
+    padding-top: 270px;
+    padding-bottom: 300px;
+  }
+}
+/* два */
+@media (width <= 560px) {
+  :root {
+    --margin: var(--margin-min);
+  }
+  .decor::after {
+    left: 45px;
+  }
+  .decor::before {
+    left: 50px;
+    top: var(--margin);
+  }
+  .intro::after {
+    bottom: 52px;
+  }
+  .header__theme-menu-list {
+    margin-top: 75px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: end;
+    margin-right: var(--margin);
+  }
+  .h1 {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    margin: 65px 10px 55px;
+  }
+  .text-item {
+    width: 100%;
+  }
+
+  .h2 {
+    width: initial;
+    margin-left: var(--margin);
+    margin-right: var(--margin);
+  }
+  .column {
+    grid-template-columns: initial;
+  }
+  .item {
+    max-width: 100%;
+  }
+  .container {
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 50px;
+  }
+  .container_column {
+    gap: var(--margin-max);
+  }
+  .collage {
+    display: flex;
+    flex-direction: column;
+  }
+  .intro {
+    height: initial;
+    margin-bottom: 0;
+  }
+  .footer {
+    padding-top: 206px;
+    padding-bottom: 233px;
+  }
+  .collage {
+    margin-top: -6px;
+    gap: var(--margin);
+  }
 }

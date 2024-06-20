@@ -2,3 +2,20 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+:root {
+  --color-black: #000028;
+  --color-neon: #ff0070;
+  --color-pink: #db00ff;
+  --color-light-pink: #f1b2ce;
+  --color-medium-pink: #ff8dcb;
+  --color-pink-200: #ffc2e6;
+  --color-grey: #353430;
+  --margin-bottom: 60px;
+  --margin-max: 20px;
+  --margin-min: 10px;
+  --cover-image: url(/images/cover-image-dark.png);
+  --outline-pink: rgba(255, 0, 112, 0.4);
+  --outline-black: rgba(50, 49, 45, 0.4);
+
+  --margin: var(--margin-max);
+}
