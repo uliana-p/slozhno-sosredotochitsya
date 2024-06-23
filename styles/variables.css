@@ -1,15 +1,24 @@
+/* Пояснение: здесь в переменных все цвета,
+ которые используются в лендинге, они заданы как есть,
+  т.е. черный называется черным и тд. 
+  для темной и светлой тем я их переопределяю в accent color, background color 
+  
+  это удобно изменить одним кликом, если  дизайнер в макете сменит акцентный цвет, например, который используется и в цвете текста и в заливке фона
+  (по сути дизайн токены)
+  https://dzen.ru/a/ZlhFZjmpWn-XFfqN   */
+
 :root {
   --color-black: #000028;
   --color-neon: #ff0070;
   --color-pink: #db00ff;
   --color-light-pink: #f1b2ce;
   --color-medium-pink: #ff8dcb;
-  --color-pink-200: #ffc2e6;
+  --color-cute-pink: #ffc2e6;
   --color-grey: #353430;
   --margin-bottom: 60px;
   --margin-max: 20px;
   --margin-min: 10px;
-  --cover-image: url(/images/cover-image-dark.png);
+  --cover-image: url(../images/cover-image-dark.png);
   --outline-pink: rgba(255, 0, 112, 0.4);
   --outline-black: rgba(50, 49, 45, 0.4);
 

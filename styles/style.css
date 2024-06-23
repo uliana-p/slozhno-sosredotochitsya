@@ -1,16 +1,36 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-/* не забыть фавикон */
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  background-image: url(/images/cover-image-dark.png);
+  background-image: url(../images/cover-image-dark.png);
   background-attachment: fixed;
   font-size: 18px;
   line-height: 23.4px;
   overflow: auto;
+  background-size: cover;
 }
 
 .page p {
   color: var(--text-color-p);
+}
+.decorated-zone::before {
+  width: 25px;
+  height: 25px;
+  border-right: 1px solid var(--accent-color);
+  border-top: 1px solid var(--accent-color);
+  position: absolute;
+  content: "";
+  right: var(--margin);
+  top: var(--margin);
+}
+.decorated-zone::after {
+  width: 25px;
+  height: 25px;
+  border-left: 1px solid var(--accent-color);
+  border-bottom: 1px solid var(--accent-color);
+  position: absolute;
+  content: "";
+  left: var(--margin);
+  bottom: var(--margin);
 }
 .decor {
   position: absolute;
@@ -31,27 +51,16 @@
   left: 43px;
   top: calc(var(--margin) - 13px);
 }
-.decor::after {
-  width: 25px;
-  height: 25px;
-  left: 34px;
-  border-right: 1px solid var(--accent-color);
-  border-top: 1px solid var(--accent-color);
-  position: absolute;
 
-  content: "";
-}
 .header__theme-menu-list {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-top: var(--margin);
   gap: var(--margin-min);
   color: var(--accent-color);
 }
 .header__theme-menu-button_active {
   outline: 1px solid var(--accent-color);
-
   pointer-events: none;
 }
 .header__theme-menu-button {
@@ -66,41 +75,38 @@
   border-bottom: 1px solid var(--accent-color);
   outline: none;
 }
-
+.header {
+  height: 100vh;
+  padding-top: var(--margin);
+  min-height: 668px;
+  /* margin-bottom: 60px; */
+}
 .intro {
   display: flex;
-
   max-width: 100%;
+  height: 100%;
   flex-direction: column;
   position: relative;
-  margin-bottom: var(--margin-max);
-}
-.intro::after {
-  width: 25px;
-  height: 25px;
-  left: var(--margin);
-  border-left: 1px solid var(--accent-color);
-  border-bottom: 1px solid var(--accent-color);
-  position: absolute;
-  bottom: 60px;
-  content: "";
+  justify-content: center;
 }
 
-.h1 {
-  font-size: 157px;
+.title,
+.footer-title {
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   line-height: 82.5%;
-  color: var(--h1);
+  color: var(--title-color);
   text-shadow: 4px 4px 0 var(--color-background);
-  margin: 275px 0 113px;
 }
-.h2 {
+
+.subtitle {
   width: calc(50% - var(--margin));
-  margin-bottom: 17%;
   margin-right: var(--margin);
   align-self: flex-end;
+  position: relative;
+  top: 15%;
 }
 /*------------тут как выглядит текст и ссылька-------  */
-.text-dark {
+.text-primary {
   color: var(--text-color);
 }
 
@@ -132,23 +138,30 @@
   outline: 1px solid var(--text-color-p);
 }
 /* ------------------- */
-
+.content {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
 .container {
   display: flex;
   flex-direction: row;
   gap: 24px;
-  margin-bottom: 80px;
+
   margin-left: var(--margin);
   margin-right: var(--margin);
 }
+.container:not(:last-child) {
+  margin-bottom: 80px;
+}
 .item {
   max-width: 649px;
-
   gap: var(--margin-min);
   display: flex;
   flex-direction: column;
 }
-
+.item-head {
+  margin-bottom: var(--margin-min);
+}
 .item:not(:last-of-type) {
   margin-bottom: var(--margin-max);
 }
@@ -210,46 +223,30 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  height: 100%;
-  padding-top: 25px;
-  padding-bottom: 207px;
+  min-height: 668px;
+  height: 100vh;
 }
-.decor-footer::before {
-  width: 25px;
-  height: 25px;
-  right: var(--margin);
-  top: 0;
-  border-right: 1px solid var(--accent-color);
-  border-top: 1px solid var(--accent-color);
-  position: absolute;
 
-  content: "";
-}
-.decor-footer::after {
-  width: 25px;
-  height: 25px;
-  left: var(--margin);
-  border-left: 1px solid var(--accent-color);
-  border-bottom: 1px solid var(--accent-color);
-  position: absolute;
-  bottom: var(--margin);
-  content: "";
-}
 /* размеры для екранов  раз*/
 @media (width <= 768px) {
+  .header {
+    padding-top: 192px;
+  }
+  .intro {
+    justify-content: initial;
+  }
   .header__theme-menu-list {
     display: flex;
     flex-direction: column;
     align-items: end;
     margin-right: var(--margin);
-    margin-top: 192px;
   }
-  .h1 {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    margin: 173px 0 161px;
+  .title {
+    margin-top: 23%;
   }
-  .h2 {
-    margin-bottom: 29%;
+
+  .subtitle {
+    top: 19%;
   }
   .column {
     grid-template-columns: initial;
@@ -257,15 +254,12 @@
   .item {
     max-width: 100%;
   }
+
   .column .item {
     margin-bottom: 0;
   }
   .text-heading {
     flex-shrink: 0;
-  }
-  .footer {
-    padding-top: 270px;
-    padding-bottom: 300px;
   }
 }
 /* два */
@@ -273,36 +267,33 @@
   :root {
     --margin: var(--margin-min);
   }
-  .decor::after {
-    left: 45px;
+  .header {
+    padding-top: 75px;
   }
-  .decor::before {
-    left: 50px;
-    top: var(--margin);
-  }
-  .intro::after {
-    bottom: 52px;
-  }
+
   .header__theme-menu-list {
-    margin-top: 75px;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: end;
-    margin-right: var(--margin);
   }
-  .h1 {
+  .title {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
-    margin: 65px 10px 55px;
+    margin-left: var(--margin);
+    margin-top: 18%;
   }
   .text-item {
     width: 100%;
   }
 
-  .h2 {
+  .subtitle {
     width: initial;
     margin-left: var(--margin);
     margin-right: var(--margin);
+    top: 9%;
+  }
+  .content {
+    margin-top: 40px;
+    margin-bottom: 40px;
   }
   .column {
     grid-template-columns: initial;
@@ -312,26 +303,26 @@
   }
   .container {
     flex-direction: column;
-    gap: 18px;
+    gap: 20px;
+  }
+
+  .container:not(:last-child) {
     margin-bottom: 50px;
   }
+
   .container_column {
     gap: var(--margin-max);
+  }
+
+  .container-gallery {
+    gap: var(--margin);
   }
   .collage {
     display: flex;
     flex-direction: column;
   }
-  .intro {
-    height: initial;
-    margin-bottom: 0;
-  }
-  .footer {
-    padding-top: 206px;
-    padding-bottom: 233px;
-  }
+
   .collage {
-    margin-top: -6px;
     gap: var(--margin);
   }
 }

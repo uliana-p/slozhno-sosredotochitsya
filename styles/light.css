@@ -1,6 +1,6 @@
 /* стили для светлой темы  */
 .page.theme_light {
-  --h1: var(--color-pink-200);
+  --title-color: var(--color-cute-pink);
 
   --text-color-p: var(--color-grey);
   --color-background: var(--color-medium-pink);
@@ -8,33 +8,26 @@
   --accent-color: var(--color-grey);
   --outline: var(--outline-black);
   --item-text: var(--color-grey);
-  background-image: url(/images/cover-image-light.png);
+  background-image: url(../images/cover-image-light.png);
 }
 
-.page.theme_light .decor::before {
-  display: none;
-}
 .page.theme_light .decor {
-  color: transparent;
+  display: none;
 }
 
 @media (prefers-color-scheme: light) {
-  .page.theme_light {
-    --h1: var(--color-pink-200);
-
+  .page {
+    --title-color: var(--color-cute-pink);
     --text-color-p: var(--color-grey);
     --color-background: var(--color-medium-pink);
     --text-color: var(--color-grey);
     --accent-color: var(--color-grey);
     --outline: var(--outline-black);
     --item-text: var(--color-grey);
-    background-image: url(/images/cover-image-light.png);
+    background-image: url(../images/cover-image-light.png);
   }
 
-  .page.theme_light .decor::before {
+  .page .decor {
     display: none;
-  }
-  .page.theme_light .decor {
-    color: transparent;
   }
 }
