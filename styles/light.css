@@ -8,6 +8,7 @@
   --accent-color: var(--color-grey);
   --outline: var(--outline-black);
   --item-text: var(--color-grey);
+  background-color: #fff1f7;
   background-image: url(../images/cover-image-light.png);
 }
 
@@ -24,6 +25,7 @@
     --accent-color: var(--color-grey);
     --outline: var(--outline-black);
     --item-text: var(--color-grey);
+    background-color: #fff1f7;
     background-image: url(../images/cover-image-light.png);
   }
 
