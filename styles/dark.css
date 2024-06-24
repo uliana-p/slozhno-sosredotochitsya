@@ -1,6 +1,5 @@
 .page.theme_dark {
   --title-color: var(--color-pink);
-  --text-color-p: #f1b2ce;
   --item-text: var(--color-neon);
   --color-background: var(--color-neon);
   --text-color: var(--color-black);
@@ -12,7 +11,6 @@
 @media (prefers-color-scheme: dark) {
   .page {
     --title-color: var(--color-pink);
-    --text-color-p: #f1b2ce;
     --item-text: var(--color-neon);
     --color-background: var(--color-neon);
     --text-color: var(--color-black);

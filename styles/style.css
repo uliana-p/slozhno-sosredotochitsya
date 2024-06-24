@@ -13,6 +13,9 @@
 .page p {
   color: var(--text-color-p);
 }
+.decorated-zone {
+  position: relative;
+}
 .decorated-zone::before {
   width: 25px;
   height: 25px;
@@ -96,7 +99,9 @@
   color: var(--title-color);
   text-shadow: 4px 4px 0 var(--color-background);
 }
-
+.footer-title {
+  text-shadow: 2px 2px 0 var(--color-background);
+}
 .subtitle {
   width: calc(50% - var(--margin));
   margin-right: var(--margin);
